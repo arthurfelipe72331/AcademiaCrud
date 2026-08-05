@@ -1,0 +1,56 @@
+﻿@model IEnumerable<AcademiaCrud.Models.Instrutor>
+
+@{
+    ViewData["Title"] = "Instrutores";
+}
+
+
+<div class="bg-white p-4 rounded shadow-sm">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">Instrutores</h2>
+        <a asp-action="Create" class="btn btn-primary">Novo Instrutor</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.nome)</th>
+                    <th>@Html.DisplayNameFor(model => model.email)</th>
+                    <th>@Html.DisplayNameFor(model => model.telefone)</th>
+                    <th>@Html.DisplayNameFor(model => model.sexo)</th>
+                    <th>@Html.DisplayNameFor(model => model.idade)</th>
+                    <th class="text-end">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.nome)</td>
+                            <td>@Html.DisplayFor(modelItem => item.email)</td>
+                            <td>@Html.DisplayFor(modelItem => item.telefone)</td>
+                            <td>@Html.DisplayFor(modelItem => item.sexo)</td>
+                            <td>@Html.DisplayFor(modelItem => item.idade) anos</td>
+                            <td class="text-end">
+                                <a asp-action="Edit" asp-route-id="@item.idInstrutor" class="btn btn-sm btn-warning">Editar</a>
+                                <a asp-action="Details" asp-route-id="@item.idInstrutor" class="btn btn-sm btn-info text-white">Ver</a>
+                                <a asp-action="Delete" asp-route-id="@item.idInstrutor" class="btn btn-sm btn-danger">Excluir</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6" class="text-center text-muted py-4">Nenhum instrutor cadastrado.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

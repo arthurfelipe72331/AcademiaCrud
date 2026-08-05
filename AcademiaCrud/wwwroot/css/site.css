@@ -1,0 +1,17 @@
+:root {
+    --cor-destaque: #ff5722;
+    --cor-escura: #121212;
+}
+
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+

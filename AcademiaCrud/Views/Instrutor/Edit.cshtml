@@ -1,0 +1,96 @@
+﻿@model AcademiaCrud.Models.Instrutor
+
+@{
+    ViewData["Title"] = "Editar Instrutor";
+}
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="idInstrutor" />
+
+    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloModal">
+                        Editar Instrutor
+                    </h5>
+
+                    <a asp-action="Index" class="btn-close"></a>
+                </div>
+
+                <div class="modal-body">
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="nome" class="form-label"></label>
+                        <input asp-for="nome" class="form-control" />
+                        <span asp-validation-for="nome" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="email" class="form-label"></label>
+                        <input asp-for="email" class="form-control" />
+                        <span asp-validation-for="email" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="telefone" class="form-label"></label>
+                        <input asp-for="telefone" class="form-control" />
+                        <span asp-validation-for="telefone" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="sexo" class="control-label text-white"></label>
+                        <select asp-for="sexo" class="form-control">
+                            <option value="" selected disabled hidden>Selecione uma opção</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                        </select>
+                        <span asp-validation-for="sexo" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="idade" class="form-label"></label>
+                        <input asp-for="idade" class="form-control" />
+                        <span asp-validation-for="idade" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <a asp-action="Index" class="btn btn-secondary">
+                        Cancelar
+                    </a>
+
+                    <button type="submit" class="btn btn-success">
+                        Salvar
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var modal = new bootstrap.Modal(document.getElementById('modalEditar'));
+
+            modal.show();
+
+        });
+    </script>
+}
