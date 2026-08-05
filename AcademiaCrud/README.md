@@ -95,7 +95,7 @@ git clone [https://github.com/SEU-USUARIO/HospitalCrud.git](https://github.com/a
 Abra o projeto utilizando o **Visual Studio 2022**.
 
 ## Configure a conexão
-
+ 
 Edite o arquivo:
 
 ```
