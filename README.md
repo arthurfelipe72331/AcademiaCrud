@@ -70,7 +70,7 @@ A interface foi desenvolvida utilizando:
 
 
 
-![Tela Inicial](imagens/tela-inicial.png)
+![Tela Inicial](PetCrud/imagens/tela-inicial.png)
 
 ---
 
@@ -78,7 +78,7 @@ A interface foi desenvolvida utilizando:
 
 
 
-![Lista de Instrutores](imagens/instrutores-index.png)
+![Lista de Instrutores](PetCrud/imagens/instrutores-index.png)
 
 ---
 
